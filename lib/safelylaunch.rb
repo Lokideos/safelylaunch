@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "safelylaunch/version"
+require 'safelylaunch/version'
 
 module Safelylaunch
   class Error < StandardError; end

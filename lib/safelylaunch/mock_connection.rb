@@ -16,7 +16,7 @@ module Safelylaunch
 
     def build_connection
       stubs = Faraday::Adapter::Test::Stubs.new do |stub|
-        stub.get('/api/v1/check') { |_env| [200, {}, '{}'] }
+        stub.get('/api/v1/check') { |_env| [200, {}, '{ "key": "stream-toggle", "enable": false }'] }
       end
 
       Faraday.new(url: host, request: { timeout: 10 }) do |conn|

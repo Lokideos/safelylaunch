@@ -6,6 +6,6 @@ RSpec.describe Safelylaunch::MockConnection do
   let(:api_token) { '123' }
 
   describe '#call' do
-    it { expect(conn.call).to be_a Faraday::Connection }
+    it { expect(conn.get('anything')).to eq("key": "stream-toggle", "enable": false)  }
   end
 end

@@ -5,7 +5,7 @@ RSpec.describe Safelylaunch::HttpConnection do
 
   let(:api_token) { '123' }
 
-  describe '#call' do
-    it { expect(conn.call).to be_a Faraday::Connection }
+  describe '#get' do
+    it { expect(conn.get('stream-toggle ')).to eq("key": "stream-toggle", "enable": false)  }
   end
 end

@@ -15,7 +15,7 @@ module Safelylaunch
 
       @connection = Faraday.new(url: host, request: { timeout: 10 }) do |conn|
         conn.response :json, content_type: %r{application/json}, parser_options: { symbolize_names: true }
-        conn.response :logger, logger: logger
+        conn.response :logger
         conn.adapter Faraday.default_adapter
       end
     end
